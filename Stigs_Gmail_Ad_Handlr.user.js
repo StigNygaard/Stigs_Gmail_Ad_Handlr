@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name     	Stig's Gmail Ad Handlr
-// @namespace   dk.rockland.userscript.gmail.handlr
-// @description Stig's Gmail Ad Handlr highlights ads for easy recognizability
-// @author      Stig Nygaard, http://www.rockland.dk, https://www.flickr.com/photos/stignygaard/
-// @match       https://mail.google.com/mail/u/0/*
-// @version  	1
-// @run-at      document-start
-// @grant    	none
+// @name            Stig's Gmail Ad Handlr
+// @namespace       dk.rockland.userscript.gmail.handlr
+// @description     Stig's Gmail Ad Handlr highlights ads for easy recognizability
+// @author          Stig Nygaard, http://www.rockland.dk, https://www.flickr.com/photos/stignygaard/
+// @match           https://mail.google.com/mail/u/0/*
+// @version         1
+// @run-at          document-start
+// @grant           none
 // @noframes
 // ==/UserScript==
 
