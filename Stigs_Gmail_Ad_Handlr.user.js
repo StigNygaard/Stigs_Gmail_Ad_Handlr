@@ -4,7 +4,7 @@
 // @description     Stig's Gmail Ad Handlr highlights ads for easy recognizability
 // @author          Stig Nygaard, https://www.rockland.dk, https://www.flickr.com/photos/stignygaard/
 // @match           https://mail.google.com/mail/u/0/*
-// @version         6
+// @version         7
 // @run-at          document-start
 // @grant           none
 // @noframes
@@ -41,8 +41,13 @@ function blocker() {
     }
 }
 
+function styleKeeper() {
+    setInterval(insertStyle, 1000);
+    setTimeout(insertStyle, 300);
+}
+
 // Try immediately
 insertStyle();
 // Try again shortly after
-window.addEventListener('load', insertStyle, false);
+window.addEventListener('load', styleKeeper, false);
 // window.addEventListener('load', blocker, false);
