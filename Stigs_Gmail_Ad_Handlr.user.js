@@ -4,7 +4,7 @@
 // @description     Stig's Gmail Ad Handlr highlights ads for easy recognizability
 // @author          Stig Nygaard, https://www.rockland.dk, https://www.flickr.com/photos/stignygaard/
 // @match           https://mail.google.com/mail/u/0/*
-// @version         7
+// @version         8
 // @run-at          document-start
 // @grant           none
 // @noframes
@@ -24,7 +24,7 @@ function insertStyle() {
         var style = document.createElement('style');
         style.type = 'text/css';
         style.id = 'gmailStyle';
-        style.innerHTML = selector + ' {opacity:0.96 !important; background-color:#FFA; filter: sepia(90%) !important; display: none}';
+        style.textContent = selector + ' {opacity:0.96 !important; background-color:#FFA; filter: sepia(90%) !important; display: none} #aso_search_form_anchor {background-color:#DFD}';
         // style.innerHTML = '.aKB {background-color:#FFA; filter: sepia(90%) !important} .aKB div {opacity:0.96 !important} div.J-N-Jz:contains("Edit subject"), div.J-J5-Ji.J-JN-M-I-Jm {background-color:#F00}'; // div#:1dt,  // data-tooltip="Type of response"
         document.getElementsByTagName('head')[0].appendChild(style);
         log('gmailStyle has been ADDED');
@@ -42,12 +42,13 @@ function blocker() {
 }
 
 function styleKeeper() {
-    setInterval(insertStyle, 1000);
-    setTimeout(insertStyle, 300);
+    setInterval(insertStyle, 5000);
+    // setTimeout(insertStyle, 200);
 }
 
 // Try immediately
 insertStyle();
-// Try again shortly after
+// and keep trying in case missing...
+document.addEventListener('DOMContentLoaded', insertStyle, false);
 window.addEventListener('load', styleKeeper, false);
 // window.addEventListener('load', blocker, false);
